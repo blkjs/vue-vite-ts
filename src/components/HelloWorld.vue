@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { ref,reactive, defineComponent, getCurrentInstance } from 'vue'
+import { ref,reactive, defineComponent } from 'vue'
 export default defineComponent({
   name: 'HelloWorld',
   props: {
@@ -12,21 +12,12 @@ export default defineComponent({
   },
   setup: () => {
     const count = ref(0)
-	const { ctx } = getCurrentInstance();
 	 let state = reactive({
 	  ruleForm: {
 		username: "fur",
 		password: "123",
 	  }
 	});
-	interface Animal {
-	   color: string;
-	   height: number;
-	}
-	const labelVal: Animal = {
-	   color:[123],
-	   height: 56
-	}
 	function submitForm(data:Object) {
 		console.log(data)
 		console.log(state.ruleForm)
